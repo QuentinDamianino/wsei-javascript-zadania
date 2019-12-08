@@ -23,4 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const block = document.getElementsByClassName("block")[0];
     console.log(block);
+
+    //zadanie 3 
+
+    const nav = document.querySelectorAll("nav li");
+    console.log(nav);
+
+    const p = document.querySelectorAll("div p");
+    console.log(p);
+
+    const article = document.querySelectorAll("article div");
+    console.log(article);
 });

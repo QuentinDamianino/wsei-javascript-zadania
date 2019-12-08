@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //zadnie 1
+    //zadnie 0
 
     const title = document.getElementsByClassName("title");
 
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getDataAnimation(title[0]);
 
 
-    //zadanie 2
+    //zadanie 1
     
     const home = document.getElementById("home");
     const home2 = document.querySelector("#home");
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const block = document.getElementsByClassName("block")[0];
     console.log(block);
 
-    //zadanie 3 
+    //zadanie 2 
 
     const nav = document.querySelectorAll("nav li");
     console.log(nav);
@@ -34,4 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const article = document.querySelectorAll("article div");
     console.log(article);
+
+    //zadanie 3
+
+    const first = document.querySelector("article.first");
+    const result = first.getElementsByTagName("h1");
+    console.log(result.length);
+    
 });

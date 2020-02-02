@@ -5,28 +5,28 @@
  */
 
 
-//Twoj komentarz ...
+//Funkcja zewnętrzna
 function jeden() {
 
-    //Twoj komentarz ...
+    //Zmienna lokalna
     var zmienna1 = 1;
 
-    //Twoj komentarz ...
+    //funkcja wewnętrzna
     function dwa() {
 
-        //Twoj komentarz ...
+        //funkcja wewnętrzna ma dostęp do zmiennej z funkcji zewnętrznej
         console.log(zmienna1);
 
-        //Twoj komentarz ...
+        //zmienna lokalna w funkcji wewnętrznej
         var zmienna2 = 3;
     }
 
-    //Twoj komentarz ...
+    //Wywołanie funkcji w zasięgu lokalnym
     dwa();
 
-    //Twoj komentarz ...
+    //funkcja nie ma dostępu do lokalnej zmiennej funkcji dwa()
     console.log(zmienna2)
 }
 
-//Twoj komentarz ...
+//wywołanie funkcji zewnętrznej a co za tym idzie wewnętrzej też bo funkcja zewnętrzna w środku wywołuje funkcję wewnętrzna
 jeden()

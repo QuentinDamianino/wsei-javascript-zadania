@@ -1,18 +1,15 @@
-hello();
-
-function hello() {
-    console.log("Cześć");
+Hi()
+function Hi(){
+  console.log("Cześć")
 }
+Hi()
 
-hello();
-//funkcja wywołuje się bez względu na miejsce w którym ją wywołujemy
+//funkcja wykonuje się poprawnie zarówno przed jak i po deklaracji funkcji
 
-
-welcome();
-
-let welcome = function() {
-    console.log("witaj");
+Hello()
+var Hello = function(){ 
+  console.log("Witaj")
 }
+Hello()
 
-welcome();
-//funkcja może byc wywołana tylko po jej deklaracji
+//funkcja wykonuje się tylko po deklaracji zmiennej, przed deklaracją wyskakuje błąd (ponieważ nie jest widoczna powyżej deklaracji)

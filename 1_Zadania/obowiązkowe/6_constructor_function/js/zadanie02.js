@@ -1,45 +1,53 @@
 function Calculator() {
-    this.history = [];
+    this.historyOperations = [];
 }
 
-Calculator.prototype.add = function (num1, num2) {
-    const sum = num1 + num2;
-    this.history.push("added " + num1 + " to " + num2 + " got " + sum);
-    return sum;
+Calculator.prototype.add = function(num1, num2) {
+    const result = num1 + num2;
+    const log = `added ${num1} to ${num2} got ${result}`;
+    this.historyOperations.push(log);
+    return result;
 }
 
-Calculator.prototype.multiply = function (num1, num2) {
-    const sum = num1 * num2;
-    this.history.push("multiplied " + num1 + " to " + num2 + " got " + sum);
-    return sum;
+Calculator.prototype.multiply = function(num1, num2) {
+    const result = num1 * num2;
+    const log = `multiplied ${num1} with ${num2} got ${result}`;
+    this.historyOperations.push(log);
+    return result;
 }
 
-Calculator.prototype.substract = function (num1, num2) {
-    const sum = num1 + num2;
-    this.history.push("substracted " + num1 + " to " + num2 + " got " + sum);
-    return sum;
+Calculator.prototype.substract = function(num1, num2) {
+    const result = num1 - num2;
+    const log = `substracted ${num1} from ${num2} got ${result}`;
+    this.historyOperations.push(log);
+    return result;
 }
 
-Calculator.prototype.divide = function (num1, num2) {
-    const sum = num1 + num2;
-    this.history.push("divided " + num1 + " to " + num2 + " got " + sum);
-    return sum;
+Calculator.prototype.divide = function(num1, num2) {
+    if(num2 === 0) {
+        this.historyOperations.push('tried to divide by zero');
+        return;
+    }  
+    const result = num1 / num2;
+    const log = `divided ${num1} by ${num2} got ${result}`;
+    this.historyOperations.push(log);
+    return result;
 }
 
 Calculator.prototype.printOperations = function() {
-    console.table(this.history);
+    this.historyOperations.forEach(el => console.log(el));
 }
 
 Calculator.prototype.clearOperations = function() {
-    this.history = [];
+    this.historyOperations = [];
+    this.historyOperations.length = 0;
 }
 
-calculator = new Calculator();
-
-calculator.add(2,2)
-calculator.multiply(2,2)
-calculator.substract(2,2)
-calculator.divide(2,2)
-calculator.printOperations();
-calculator.clearOperations();
-calculator.printOperations();
+const calc = new Calculator();
+calc.add(4,2);
+calc.multiply(5,10);
+calc.substract(122,21);
+calc.divide(10,0);
+calc.divide(10,5);
+calc.printOperations();
+calc.clearOperations();
